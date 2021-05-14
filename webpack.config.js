@@ -16,11 +16,15 @@ const  OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plu
 
 module.exports={
     // 入口
-    entry:"./src/js/home.js",
+    entry:{
+      home:"./src/js/home.js",
+      login:"./src/js/login.js",
+      register:"./src/js/register.js",
+    },
     //出口
     output:{
         path:path.resolve(__dirname,'dist'),
-        filename:"js/[name]-[hash:10].js",//修改出口中的js文件名 为动态获取
+        filename:"js/[name]-[hash].js",//修改出口中的js文件名 为动态获取
         publicPath: './'
     },
 
@@ -62,8 +66,22 @@ module.exports={
     //插件
     plugins:[
         new HtmlWebpackPlugin({
-            template:"./src/page/home.html"
+            template:"./src/page/home.html",
+            filename:'home.html',
+            chunks:['home']
         }),
+        new HtmlWebpackPlugin({
+            template:"./src/page/login.html",
+            filename:'login.html',
+            chunks:['login']
+        }),
+        new HtmlWebpackPlugin({
+            template:"./src/page/register.html",
+            filename:'register.html',
+            chunks:['register']
+        }),
+
+
         new MiniCssExtractPlugin({  
             filename: 'css/[name].css' // 输出到css文件夹里
       }),
@@ -77,10 +95,10 @@ module.exports={
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'), // 启动服务器目录
     compress: true, // 启动gzip
-    port: 8089,  // 端口  8080 80  8081 8082
+    port: 10086,  // 端口  8080 80  8081 8082
     open: true, // 自动打开服务
     publicPath: '/', // 静态资源查找路径
-    openPage: 'index.html', // 打开的页面
+    openPage: 'home.html', // 打开的页面
   },
    target: 'web', // 目标是浏览器
 }
