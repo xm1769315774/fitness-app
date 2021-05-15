@@ -1,3 +1,85 @@
+/* 引入线上矢量图标库css */
+@import url("//at.alicdn.com/t/font_2550098_61id8hx9c93.css");
+
 body{
-    background: rgb(255, 102, 0);
+    background:url("../img/login1.png") no-repeat;
+    background-size: 100%;
+    color: #fff;
+    position: relative;
+}
+/* 头部 */
+header{
+    display: flex;
+    justify-content: flex-end;
+}
+header a{
+    color: #fff;
+    font-size: 20px;
+    margin-top: 29px;
+    margin-right: 20px;
+}
+/* 主体 */
+main{
+    width: auto;
+}
+main ul{
+    width: calc(100% - 64px);
+    margin: auto;  
+}
+main ul li{
+    margin-bottom: 19px;
+}
+/* 密码登录 */
+main ul li:first-child{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+main ul li input{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-indent: 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    background: rgb(255,255,255,.5);
+    outline: none;
+}
+main ul li input::placeholder{
+    color: #fff;
+    text-indent: 24px;
+    opacity: 0.67;
+}
+
+/* 登录 */
+main ul .btn input{
+    background-color: rgba(99, 255, 167, 0.5);
+    color: #fff;
+}
+
+/* 忘记密码 */
+main ul li:last-child{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    line-height: 20px;
+}
+main ul li:last-child a{
+    color: #fff; 
+}
+main ul li:last-child i{
+    margin-left: 61px;
+    margin-right: 6px;
+}
+
+/* 页脚 */
+footer{
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+    line-height: 22px;
+    text-align: center;
+    font-size: 16px;
 }

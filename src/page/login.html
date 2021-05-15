@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>登录页</title>
 </head>
+
 <body>
-    <a href="./home.html">跳转至首页</a>
+    <!-- 头部 -->
+    <header>
+        <!-- 注册账号 -->
+        <a href="./register.html">注册账号</a>
+    </header>
+
+
+    <!-- 主体 -->
+    <main>
+        <ul>
+            <!-- 密码登录 -->
+            <li>密码登录</li>
+            <!-- 请输入账号 -->
+            <li>
+                <input type="text" placeholder="请输入账号" id="username">
+            </li>
+
+            <!-- 请输入密码 -->
+            <li>
+                <input type="password" placeholder="请输入密码" id="pwd">
+            </li>
+
+            <!-- 登录 -->
+            <li class="btn">
+                <input type="button" value="登录">
+            </li>
+
+            <!-- 忘记密码 -->
+            <li>
+                <a href="./register.html">忘记密码</a>
+                <i class="iconfont icon-weixin"></i>
+                <a href="./register.html">微信登录</a>
+            </li>
+
+        </ul>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+            - HOLD ON -
+    </footer>
 </body>
+
 </html>

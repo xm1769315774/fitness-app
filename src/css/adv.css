@@ -1,0 +1,85 @@
+/* adv私用css样式文件 */
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+/* 头部源码健身 */
+header{
+    width: auto;
+    height: 44px;
+    background: #f8f8f8;
+    text-align: center;
+    line-height: 44px;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* 主体 */
+main{
+    flex: 1;
+    background: url("../img/adv1.png") no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+/* 倒计时，跳过 */
+main .count{
+    position: absolute;
+    top: 28px;
+    right: 14px;
+    width: calc(26% - 7px);
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid rgba(187, 187, 187, 100);
+    background: #fff;
+}
+main .count span{
+    height: 25px;
+    width: 40%;
+    line-height: 25px;
+    color: #101010;
+    border-right: 1px solid rgba(187, 187, 187, 100);
+}
+main .count a{
+    width: 60%;
+    height: 20px;
+    line-height: 20px;
+    color: #101010;
+}
+/* HOLD ON */
+main .mark{
+    position: absolute;
+    bottom: 124px;
+    left: 0;
+    height: 64px;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+
+    /* 调用动画 */
+    /* ease-in-out： 由慢到快再到慢  infinite  无数次 */
+    animation: run 5s infinite ease-in-out;
+}
+/* 定义动画 */
+/* translateY()   参数：Y轴平移位置  scale()*/
+@keyframes run{
+    /* 开始执行动画之前的样子 */
+    0%{
+      transform: translateY(-100px)  scale(0);
+    }
+    33%{
+        transform: translateY(-50px)  scale(0.3);
+    }
+    66%{
+        transform: translateY(50px)  scale(0.8);
+    }
+    
+    100%{
+        transform: translateY(0px)  scale(1);
+    }
+}
