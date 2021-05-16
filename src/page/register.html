@@ -23,25 +23,28 @@
             <li>手机号登录/注册
                 <p>快速找到好友, 一站式记录你的运动</p>
             </li>
-             <!-- 输入手机号码 -->
-             <li class="phone">
-                 <div>
-                     <span>+86</span>
-                     <span>▼</span>
-                 </div>
+            <!-- 输入手机号码 -->
+            <li class="phone">
+                <div>
+                    <span>+86</span>
+                    <span>▼</span>
+                </div>
                 <input type="text" placeholder="输入手机号码" id="tell">
             </li>
 
-             <!-- 请输入验证码 -->
-             <li class="verify">
+            <!-- 请输入验证码 -->
+            <li class="verify">
                 <input type="text" placeholder="请输入验证码" id="auth">
-                <div>giv6j</div>
+                <div>
+                    <!-- 验证码 Canvas -->
+                    <canvas id="captcha" width="123" height="50"></canvas>
+                </div>
             </li>
 
 
             <!-- 请输入密码 -->
             <li>
-                <input type="text" placeholder="请输入密码" id="pwd">
+                <input type="password" placeholder="请输入密码" id="pwd">
             </li>
 
             <!-- 请再次确认密码 -->
@@ -51,23 +54,24 @@
 
             <!-- 注册账号 -->
             <li class="btn">
-                <input type="button" value="注册账号">
+                <input type="button" value="注册账号" id="btn">
             </li>
 
             <!-- 微信注册 -->
             <li>
-               
+
                 <i class="iconfont icon-weixin"></i>
                 <a href="./register.html">微信注册</a>
             </li>
-
+           
         </ul>
     </main>
 
     <!-- 页脚 -->
     <footer>
-            - HOLD ON -
+        - HOLD ON -
     </footer>
+    
 </body>
 
 </html>

@@ -1,12 +1,12 @@
-
 /* 引入线上矢量图标库css */
-@import url("//at.alicdn.com/t/font_2550098_61id8hx9c93.css");
+@import url("//at.alicdn.com/t/font_2550098_ycfw8l4ov8c.css");
 
 body{
-    background:url("../img/login1.png") no-repeat;
-    background-size: 100%;
-    color: #fff;
+    background:url("../img/login1.jpg") no-repeat;
+    background-size: cover;
+    background-position: top center;
     position: relative;
+    color: #fff;
 }
 /* 头部 */
 header{
@@ -30,18 +30,12 @@ main ul{
 main ul li{
     margin-bottom: 19px;
 }
-/* 手机号登录/注册 */
+/* 密码登录 */
 main ul li:first-child{
     font-size: 28px;
     font-weight: bold;
     margin-top: 25px;
     margin-bottom: 40px;
-}
-main ul li:first-child p{
-    font-size: 16px;
-    color: #fff;
-    opacity: 0.5;
-    margin-top: 5px;
 }
 
 main ul li input{
@@ -49,64 +43,24 @@ main ul li input{
     height: 50px;
     line-height: 50px;
     text-indent: 24px;
-   
     border-radius: 25px;
     font-size: 16px;
-    background: rgb(255,255,255,.5);
+    background: rgba(255,255,255,.5);
     outline: none;
 }
 main ul li input::placeholder{
     color: #fff;
-    text-indent: 24px;  
+    text-indent: 24px;
     opacity: 0.67;
 }
 
-/* 输入手机号码 */
-main .phone{
-    position: relative;
-}
-main .phone div{
-    font-size: 16px;
-    height: 50px;
-    line-height: 55px;
-    width: 83px;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-main .phone #tell{
-    text-indent: 83px;
-}
-main .phone #tell::placeholder{
-    text-indent: 83px;
-}
-/* 请输入验证码 */
-main ul .verify{
-    display: flex;
-    justify-content: space-between;
-}
-main ul .verify input{
-    width: calc(60% - 7.5px);
-}
-main ul .verify div{
-    width: calc(40% - 7.5px);
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    color: black;
-    font-size: 20px;
-    background: #d488ec;
-}
-
-/* 注册账号 */
+/* 登录 */
 main ul .btn input{
     background-color: rgba(99, 255, 167, 0.5);
     color: #fff;
 }
 
-
-/* 微信注册 */
+/* 忘记密码 */
 main ul li:last-child{
     display: flex;
     justify-content: flex-end;

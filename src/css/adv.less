@@ -17,8 +17,8 @@ header{
 /* 主体 */
 main{
     flex: 1;
-    background: url("../img/adv1.png") no-repeat;
-    background-size: 100%;
+    background: url("../img/adv1.jpg") no-repeat top center;
+    background-size: cover;
     position: relative;
 }
 /* 倒计时，跳过 */
@@ -63,13 +63,14 @@ main .mark{
 
     /* 调用动画 */
     /* ease-in-out： 由慢到快再到慢  infinite  无数次 */
-    animation: run 5s infinite ease-in-out;
+    animation: run 3s ease-in-out;
 }
 /* 定义动画 */
 /* translateY()   参数：Y轴平移位置  scale()*/
 @keyframes run{
     /* 开始执行动画之前的样子 */
     0%{
+        opacity: 0;
       transform: translateY(-100px)  scale(0);
     }
     33%{
@@ -80,6 +81,7 @@ main .mark{
     }
     
     100%{
+        opacity: 1;
         transform: translateY(0px)  scale(1);
     }
 }

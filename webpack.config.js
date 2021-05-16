@@ -21,7 +21,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     // 入口
     entry: {
-        common:'./src/js/common.js', //公共样式/js 一定写在入口的最前面
+        commonCss:'./src/js/commonCss.js', //公共css样式/js 一定写在入口的最前面
+
+         // 引入公共js
+        dom:"./src/js/commonJs/dom.js",
+        http:"./src/js/commonJs/http.js",
+        utils:"./src/js/commonJs/utils.js",
+
+        // 引入三方插件
+        captcha:"./src/lib/captcha-mini.js",
 
         home: "./src/js/home.js",
         login: "./src/js/login.js",
@@ -86,22 +94,22 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/page/home.html",
             filename: 'home.html',
-            chunks: ['home','common']
+            chunks: ['home','commonCss','dom']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/login.html",
             filename: 'login.html',
-            chunks: ['login','common']
+            chunks: ['login','commonCss','dom','http','utils']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/register.html",
             filename: 'register.html',
-            chunks: ['register','common']
+            chunks: ['register','commonCss','dom','http','captcha','utils']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/adv.html",
             filename: 'adv.html',
-            chunks: ['adv','common']
+            chunks: ['adv','commonCss','dom']
         }),
 
 
@@ -124,7 +132,7 @@ module.exports = {
         port: 10086,  // 端口  8080 80  8081 8082
         open: true, // 自动打开服务
         publicPath: '/', // 静态资源查找路径
-        openPage: 'register.html', // 打开的页面
+        openPage: 'adv.html', // 打开的页面
     },
     target: 'web', // 目标是浏览器
 }

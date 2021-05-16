@@ -1,3 +1,3 @@
 
 // 引入对应的css
-require("../css/home.css");
+require("../css/home.less");

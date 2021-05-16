@@ -1,0 +1,27 @@
+/*
+ * 可复用的公有布局
+ */
+
+ /* 登录模块+注册模块 */
+ /* 公用样式 */
+ /* 引入在线的矢量图标库 */
+@import url("//at.alicdn.com/t/font_2550098_ycfw8l4ov8c.css");
+
+ /* 弹出框 */
+ .box{
+     position: fixed;
+     top: calc(50% - 100px);
+     left: calc(50% - 100px);
+     width: 200px;
+     height: 200px;   
+     background: rgba(0, 0, 0, .5);
+ }
+ .icon1{
+    font-size: 100px !important;
+    margin-left: 50px;
+ }
+ .text{
+     font-size: 20px;
+     text-align: center;
+     margin-top: 20px;
+ }
