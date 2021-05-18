@@ -1,3 +1,152 @@
-body{
-    background: rgb(9, 241, 40);
+// home页面私用css样式
+// 轮播图的大小
+.swiper-container {
+    width: auto;
+    height: 200px;
+} 
+// 轮播图片
+header img{
+    width: 100%;
+    height: 200px;
+    // 自适应屏幕
+    object-fit: cover;
+}
+// 轮播图分页器样式
+.swiper-container{
+    // --swiper-theme-color: #ff6600;
+    --swiper-pagination-color: #333;/* 两种都可以 */
+  }
+
+// 主体内容
+main{
+    width: 100%;
+    padding-bottom: 92px;
+}
+main ul{
+    display: flex;
+   flex-direction: column;
+    width: 90%;
+    // background: chartreuse;
+    margin-left: 5%;
+}
+main ul li{
+    display: flex;
+    width: auto;
+    height: 110px;
+    margin-bottom: 20px;
+}
+main ul li div{
+    border-radius: 15px;
+}
+main ul li h2{
+    font-size: 20px;
+    color: #005177;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+main ul li h3{
+    font-size: 16px;
+    color: #fff;
+    margin-top: 12px;
+    margin-left: 14px;
+}
+// 今日排名累计打卡
+main ul li:first-child{
+    justify-content: space-around;
+    height: 150px;
+    margin-top: 20px;
+}
+main .today{
+    position: relative;
+    flex: 2;
+    background: #1592CC;
+    margin-right: 22px;
+}
+main .today i{
+    font-size: 100px;
+    color: #fff;
+    opacity: 0.3;
+}
+main .today span{
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+}
+
+// 累积打卡
+main .acc{
+    position: relative;
+    flex: 3;
+    background: #7BCBF5;
+}
+main .acc i{
+    font-size: 100px;
+    color: #fff;
+    opacity: 0.67;
+}
+main .acc button{
+    position: absolute;
+    bottom: 25px;
+    right: 15px;
+    width: 100px;
+    height: 40px;
+    line-height: 23px;
+    color: rgba(0, 78, 115, 100);
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    border: 3px solid rgba(0, 81, 119, 100);
+}
+// 运动数据
+main ul li:nth-child(2){
+    justify-content: space-around;
+}
+main .motion{
+    flex: 2;
+    margin-right: 20px;
+    background:url("../img/homedata.jpg") no-repeat top center;
+    background-size: cover;
+}
+// 累积运动徽章
+main .accS{
+    position: relative;
+    flex: 2;
+    background: #9dbde3;
+}
+main .accS h3{
+    color: #005177;
+}
+main .accS i{
+    font-size: 80px;
+    color: #fff;
+    opacity: 0.67;
+}
+main .accS p{
+    position: absolute;
+    bottom: 6px;
+    right: 18px;
+    font-size: 18px;
+    color: #004E73;
+}
+main .accS p span{
+    font-size: 60px;
+   font-weight: 500;
+}
+// 课程训练
+main .course{
+    width: 100%;
+    height: 110px;
+    background:url("../img/homecourse.gif") no-repeat top center;
+    background-size: cover;
+}
+// 户外跑步
+main .out{
+    width: 100%;
+    height: 110px;
+    background:url("../img/homerun.jpg") no-repeat top center;
+    background-size: cover;
 }

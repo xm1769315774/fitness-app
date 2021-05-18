@@ -2,13 +2,14 @@
  * 可复用的公有布局
  */
 
+/* 引入在线的矢量图标库 */
+@import url("//at.alicdn.com/t/font_2550098_35qmd43t2a6.css");
+
  /* 登录模块+注册模块 */
  /* 公用样式 */
- /* 引入在线的矢量图标库 */
-@import url("//at.alicdn.com/t/font_2550098_ycfw8l4ov8c.css");
-
+ 
  /* 弹出框 */
- .box{
+ .hint{
      position: fixed;
      top: calc(50% - 100px);
      left: calc(50% - 100px);
@@ -16,12 +17,41 @@
      height: 200px;   
      background: rgba(0, 0, 0, .5);
  }
- .icon1{
+ .hint .icon1{
     font-size: 100px !important;
     margin-left: 50px;
  }
- .text{
+ .hint .text{
      font-size: 20px;
      text-align: center;
      margin-top: 20px;
  }
+
+ /* 公共底部 */
+ footerS{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 100);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+ }
+ footerS ul{
+     display: flex;
+     justify-content: space-around;
+     
+ }
+ footerS ul .iconfont{
+  font-size: 30px;
+ }
+ 
+ footerS .iconHome{
+    font-weight: 100;
+ }
+ footerS ul h3{
+    font-size: 14px;
+   }
+
+.active{
+    color: #4294FF;
+}

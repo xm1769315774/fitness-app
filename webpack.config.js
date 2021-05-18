@@ -30,11 +30,14 @@ module.exports = {
 
         // 引入三方插件
         captcha:"./src/lib/captcha-mini.js",
+        Swiper:"./src/lib/swiper/swiper-bundle.js",
 
         home: "./src/js/home.js",
         login: "./src/js/login.js",
         register: "./src/js/register.js",
         adv: "./src/js/adv.js",
+        my: "./src/js/my.js",
+        running: "./src/js/running.js",
        
     },
     //出口
@@ -94,7 +97,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/page/home.html",
             filename: 'home.html',
-            chunks: ['home','commonCss','dom']
+            chunks: ['home','commonCss','dom','Swiper',"utils",'http']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/login.html",
@@ -110,6 +113,16 @@ module.exports = {
             template: "./src/page/adv.html",
             filename: 'adv.html',
             chunks: ['adv','commonCss','dom']
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/page/my.html",
+            filename: 'my.html',
+            chunks: ['my','commonCss','dom','Swiper',"utils"]
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/page/running.html",
+            filename: 'running.html',
+            chunks: ['running','commonCss','dom','Swiper',"utils"]
         }),
 
 

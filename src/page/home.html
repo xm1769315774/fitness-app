@@ -7,6 +7,97 @@
     <title>Document</title>
 </head>
 <body>
-    这是首页<a href="./login.html">跳转至登录页</a><a href="./register.html">跳转至注册页</a>
+    <!-- 头部轮播图 -->
+    <header>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="../img/home01.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/home02.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/home03.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/home04.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/home05.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="../img/home06.jpg" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            
+        </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <main>
+        <ul>
+            <!-- 今日排名累计打卡 -->
+            <li>
+
+                <!-- 今日排名 -->
+                <div class="today">
+                    <h2>今日排名</h2>
+                   <i class="iconfont icon-jiangbei"></i>
+                   <span id="rank">9</span>
+                </div>
+
+                <!-- 累积打卡 -->
+                <div class="acc">
+                    <h2>累积打卡
+                        <span id="punchIn">23</span>
+                        天</h2>
+                    <i class="iconfont icon-rili"></i>
+                   <button id="card">今日打卡</button>
+                </div>
+            </li>
+
+            <!-- 运动数据 -->
+            <li>
+                <!-- 运动数据 -->
+                <div class="motion">
+                    <h3>运动数据</h3>
+                </div>
+                
+                <!-- 累积运动徽章 -->
+                <div class="accS">
+                    <h3>累积运动徽章</h3>
+                    <i class="iconfont icon-xunzhang"></i>
+                    <p>
+                        <span id="insigniaNum">3</span>
+                        枚
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                  <!-- 课程训练 -->
+               <div class="course">
+                <h3>课程训练</h3>
+               </div>
+                  
+            </li>
+            <li>
+                <!-- 户外跑步 -->
+                <div class="out">
+                    <h3>户外跑步</h3>
+                   </div> 
+          </li>
+        </ul>
+
+
+    </main>
+
+
+    <!-- 页脚 -->
+  
+   
 </body>
 </html>
