@@ -19,9 +19,9 @@ function count() {
         clearInterval(timeId);//清除定时器
         // 判断本地存储是否有数据
         if (localStorage.getItem("user")) {//如果本地存储里边有账号
-            location.href = "../home.html";//跳转至首页页面
+            location.href = "./home.html";//跳转至首页页面
         } else {
-            location.href = "../login.html";//跳转至登录页面
+            location.href = "./login.html";//跳转至登录页面
         }
     }
 }
@@ -33,9 +33,9 @@ let timeId = setInterval(count, 1000);
 countDom.addEventListener("click", function (event) {
     // 判断本地存储是否有数据
     if (localStorage.getItem("user")) {//如果本地存储里边有账号
-        location.href = "../home.html";//跳转至首页页面
+        location.href = "./home.html";//跳转至首页页面
     } else {
-        location.href = "../login.html";//跳转至登录页面
+        location.href = "./login.html";//跳转至登录页面
     }
 
 })

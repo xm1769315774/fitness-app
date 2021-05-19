@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息修改</title>
+</head>
+<body>
+    <!-- 顶部 -->
+   <header>
+       <div class="back">
+        <!-- 返回上级 -->
+       <i class="iconfont icon-xiaoyufuhao" id="getBack"></i>
+       <span>
+        个人资料
+       </span>
+       </div>
+       
+      
+   </header>
+    <!-- 主体 -->
+    <main>
+        <!-- 昵称 -->
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell weui-cell_active">
+              <div class="weui-cell__hd"><label class="weui-label">昵称</label></div>
+              <div class="weui-cell__bd">
+                  <input id="js_input" class="weui-input nickname" placeholder="用户名">
+              </div>
+            </div>
+            <!-- 性别 -->
+            <div class="weui-cell weui-cell_active weui-cell_access"id="gender">
+                <div class="weui-cell__bd">
+                    <span class="demo_badge_title">性别</span>
+                </div>
+                 <div class="c8a" id="genderVal">男</div>
+                <div class="weui-cell__ft">详细信息</div>
+            </div>
+
+             <!-- 生日 -->
+             <div class="weui-cell weui-cell_active weui-cell_access" id="birthday">
+                <div class="weui-cell__bd">
+                    <span class="demo_badge_title" >生日</span>
+                </div>
+                 <div class="c8a" id="birthdayVal">2021-11-11</div>
+                <div class="weui-cell__ft">详细信息</div>
+            </div>
+
+               <!-- 所在城市 -->
+               <div class="weui-cell weui-cell_active weui-cell_access"id="province">
+                <div class="weui-cell__bd">
+                    <span class="demo_badge_title">所在省份</span>
+                </div>
+                 <div class="c8a" id="provinceVal">四川省</div>
+                <div class="weui-cell__ft">详细信息</div>
+            </div>
+
+             <!-- 所在城市 -->
+             <div class="weui-cell weui-cell_active weui-cell_access"id="city">
+                <div class="weui-cell__bd">
+                    <span class="demo_badge_title">所在城市</span>
+                </div>
+                 <div class="c8a" id="cityVal">成都市</div>
+                <div class="weui-cell__ft">详细信息</div>
+            </div>
+
+            <!-- 个人简介 -->
+            <div class="weui-form__control-area">
+                <div class="weui-cells__group weui-cells__group_form">
+                  <div class="weui-cells__title">个人简介</div>
+                  <div class="weui-cells weui-cells_form" id="text">
+                      <div class="weui-cell ">
+                          <div class="weui-cell__bd">
+                              <textarea class="weui-textarea" placeholder="可以简单介绍一下你自己" rows="3"></textarea>
+                              <div class="weui-textarea-counter"><span>0</span>/200</div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- 保存信息 -->
+              <button id="save">保存信息</button>
+
+    </main>
+</body>
+</html>

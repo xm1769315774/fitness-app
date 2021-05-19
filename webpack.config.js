@@ -31,6 +31,7 @@ module.exports = {
         // 引入三方插件
         captcha:"./src/lib/captcha-mini.js",
         Swiper:"./src/lib/swiper/swiper-bundle.js",
+        weui:"./src/lib/weui/weui.js",
 
         home: "./src/js/home.js",
         login: "./src/js/login.js",
@@ -38,6 +39,7 @@ module.exports = {
         adv: "./src/js/adv.js",
         my: "./src/js/my.js",
         running: "./src/js/running.js",
+        information: "./src/js/information.js",
        
     },
     //出口
@@ -117,12 +119,17 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/page/my.html",
             filename: 'my.html',
-            chunks: ['my','commonCss','dom','Swiper',"utils"]
+            chunks: ['my','commonCss','dom',"utils","http"]
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/running.html",
             filename: 'running.html',
             chunks: ['running','commonCss','dom','Swiper',"utils"]
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/page/information.html",
+            filename: 'information.html',
+            chunks: ['information','commonCss','dom','http',"utils","weui"]
         }),
 
 

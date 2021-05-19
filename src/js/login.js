@@ -1,6 +1,10 @@
 // 引入对应的css
 require("../css/login.less");
 
+
+// 兼容写法
+document.ready(function(){
+
 // 获取所有元素
 let usernameInp = document.querySelector("#username");
 let pwdInp = document.querySelector("#pwd");
@@ -67,4 +71,10 @@ btnDom.addEventListener("click", function (event) {
             location.href = "./home.html";
         }, 2000)
     })
+})
+
+
+
+
+    
 })
