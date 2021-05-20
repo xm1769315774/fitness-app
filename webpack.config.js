@@ -38,9 +38,10 @@ module.exports = {
         register: "./src/js/register.js",
         adv: "./src/js/adv.js",
         my: "./src/js/my.js",
-        running: "./src/js/running.js",
+        sports: "./src/js/sports.js",
         information: "./src/js/information.js",
-       
+        courseDes: "./src/js/courseDes.js",
+        courseTrain: "./src/js/courseTrain.js",
     },
     //出口
     output: {
@@ -122,14 +123,24 @@ module.exports = {
             chunks: ['my','commonCss','dom',"utils","http"]
         }),
         new HtmlWebpackPlugin({
-            template: "./src/page/running.html",
-            filename: 'running.html',
-            chunks: ['running','commonCss','dom','Swiper',"utils"]
+            template: "./src/page/sports.html",
+            filename: 'sports.html',
+            chunks: ['sports','commonCss','dom','Swiper',"utils","http"]
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/information.html",
             filename: 'information.html',
             chunks: ['information','commonCss','dom','http',"utils","weui"]
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/page/courseDes.html",
+            filename: 'courseDes.html',
+            chunks: ['courseDes','commonCss','dom','http',"utils","weui"]
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/page/courseTrain.html",
+            filename: 'courseTrain.html',
+            chunks: ['courseTrain','commonCss','dom','http',"utils","weui"]
         }),
 
 

@@ -23,7 +23,7 @@ document.ready(function () {
     let user = JSON.parse(localStorage.getItem("user"));
 
 
-    // 将从后端拿数据修改个性信息封装为函数
+    // 将从后端拿获取数据修改个性信息封装为函数
 
     function changeInfor() {
         // 请求接口获取头像的src地址
