@@ -20,7 +20,6 @@ document.ready(function () {
     let pwd1Inp = document.querySelector("#pwd1");
     let btnDom = document.querySelector("#btn");
 
-
     // 注册事件
     btnDom.addEventListener("click", function (event) {
 
@@ -89,13 +88,13 @@ document.ready(function () {
         $http.post("/users/add", data, function (res) {
             //    console.log(res);
             if (res.status === 0) {
-                 // 点击一次之后将按钮禁用
-                 btnDom.disabled = true;
+                // 点击一次之后将按钮禁用
+                btnDom.disabled = true;
 
-                 // 两秒后将按钮设置为可以点击
-                 setTimeout(function () {
-                     btnDom.disabled = false;
-                 }, 2000);
+                // 两秒后将按钮设置为可以点击
+                setTimeout(function () {
+                    btnDom.disabled = false;
+                }, 2000);
                 // 提示
                 utils.hint(0, "恭喜你！注册成功");
                 // 登录

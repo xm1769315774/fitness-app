@@ -118,7 +118,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/page/register.html",
             filename: 'register.html',
-            chunks: ['register', 'commonCss', 'dom', 'http', 'captcha', 'utils']
+            chunks: ['register', 'commonCss', 'dom', 'http', 'captcha', 'utils', "weui"]
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/adv.html",
