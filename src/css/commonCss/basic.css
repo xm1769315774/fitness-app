@@ -3,7 +3,7 @@
  */
 
 /* 引入在线的矢量图标库 */
-@import url("//at.alicdn.com/t/font_2550098_fy6bff8ausm.css");
+/* @import url("//at.alicdn.com/t/font_2550098_p39gw5qith9.css"); */
 
  /* 登录模块+注册模块 */
  /* 公用样式 */
@@ -28,7 +28,7 @@
  }
 
  /* 公共底部 */
- footerS{
+ .commonFooter{
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -36,22 +36,24 @@
     border: 1px solid rgba(255, 255, 255, 100);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
  }
- footerS ul{
+ .commonFooter ul{
      display: flex;
      justify-content: space-around;
      
  }
- footerS ul .iconfont{
+ .commonFooter ul .iconfont{
   font-size: 30px;
  }
  
- footerS .iconHome{
+ .commonFooter .iconHome{
     font-weight: 100;
  }
- footerS ul h3{
+ .commonFooter ul h3{
     font-size: 14px;
    }
-
+.commonFooter a{
+    color: #8A8A8A;
+}
 .active{
     color: #4294FF;
 }

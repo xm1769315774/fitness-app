@@ -32,12 +32,16 @@
   },
   "browserslist": {
     "development": [
-        "last 1 chrome version",
+      "last 1 chrome version",
       "last 1 firefox version",
-        "last 1 safari version"
-      ],
-      "production": [
-        ">0.1%"
-      ]
-    }
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.1%"
+    ]
+  },
+  "dependencies": {
+    "echarts": "^5.1.1",
+    "echarts-gl": "^2.0.4"
+  }
 }

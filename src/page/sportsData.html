@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运动数据</title>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+
+        <!-- 运动数据部分 -->
+        <div class="dataBox">
+            <div id="back">
+                <i class="iconfont icon-xiaoyufuhao"></i>
+            </div>
+
+            <ul class="data">
+                <!-- 运动数据 -->
+                <li id="sportsData">
+                    <span>
+                        运动数据
+                    </span>
+                    <img src="../img/myhead.jpg" alt="" id="myhead">
+                </li>
+                <!-- 总运动+本周消耗 -->
+                <li class="allBox">
+                    <!-- 总运动 -->
+                    <div class="all">
+                        <h3>总运动</h3>
+                        <p>
+                            <span id="times">99999</span>
+                            分钟
+                        </p>
+                    </div>
+
+                    <!-- 本周消耗 -->
+                    <div class="week">
+                        <h3>本周消耗</h3>
+                        <p>
+                            <span id="calorie">99999</span>
+                            千卡
+                        </p>
+                    </div>
+                </li>
+
+                <!-- 累计连续 -->
+                <li class="expend">
+                    <!-- 消耗千卡 -->
+                    <div>
+                        <h3>消耗(千卡)</h3>
+                        <span>999999</span>
+                    </div>
+
+                    <!-- 消耗千卡 -->
+                    <div>
+                        <h3>累计(天)</h3>
+                        <span>999</span>
+                    </div>
+
+                    <!-- 消耗千卡 -->
+                    <div>
+                        <h3>连续(天)</h3>
+                        <span>999</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+
+    <!-- 主体 -->
+    <main>
+
+        <!-- 柱状图 -->
+        <div id="barChart"></div>
+
+        <!-- 3D地球 -->
+        <div id="main"></div>
+    </main>
+
+
+
+</body>
+
+</html>

@@ -37,7 +37,7 @@ document.ready(function(){
         let listHtml="";
         // 遍历数组拿到列表的数据
         res.data.forEach(function(item){
-            console.log(item);
+            // console.log(item);
             listHtml+=`
             <a href="./courseDes.html?id=${item.courseId}">
                 <li>

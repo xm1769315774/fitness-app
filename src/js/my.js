@@ -18,6 +18,11 @@ document.ready(function () {
     let pictureDom = document.querySelector(".picture");
     let uploadDom = document.querySelector("#upload");
 
+    let sportsDataDom = document.querySelector("#sportsData");
+
+
+   
+
 
     // 获取本地存储的数据，渲染页面
     let user = JSON.parse(localStorage.getItem("user"));
@@ -115,6 +120,11 @@ document.ready(function () {
     })
 
 
+
+     // 跳转至sportsData页面
+     sportsDataDom.addEventListener("click",function(){
+        location.href="./sportsData.html";
+    })
 
 
     // 注册事件点击退出登录

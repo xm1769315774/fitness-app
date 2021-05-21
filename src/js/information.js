@@ -26,35 +26,58 @@ document.ready(function () {
      // 获取用户userId
      let user=JSON.parse(localStorage.getItem("user"));
 
+
+     // 定义一个对象存储发送到后端的数据
+     let data = {
+        userId:user.userId,
+        nickname: "",
+        gender: "",
+        birthday: "",
+        province: "",
+        city: "",
+        address:[],
+        sign:""
+    };
+
     // 请求接口获取数据渲染页面
      // 将从后端拿获取数据修改个性信息封装为函数
      function changeInfor() {
         // 请求接口获取头像的src地址
         $http.get("/users/accountinfo?userId=" + user.userId, function (res) {
-            console.log(res);
+            // console.log(res);
+            // 将获取到的信息存储在本地
+            localStorage.setItem("localData",JSON.stringify(res));
             // 渲染数据
             // 判断用户名
             if (res.data.nickname) {
                 nicknameDom.value = res.data.nickname;
+               
             };
             // 性别
             if(res.data.gender){
                 genderValDom.textContent=res.data.gender;
+                
+               
             }
              // 生日
              if(res.data.birthday){
                  let birthdayVal=new Date(res.data.birthday);
-                //  console.log(birthdayVal);
+               
                 let birthday= utils.standardTime(birthdayVal);
                 birthdayValDom.textContent=birthday;
+            
             }
              // 省份 市级
              if(res.data.address){
                 //  将字符串切割成数组
                 let arr=res.data.address.split(",");
-                console.log(arr);
+        
+                 
                 provinceValDom.textContent=arr[0];
+                
                 cityValDom.textContent=arr[1];
+                 
+
             }
 
             // 判断个性签名
@@ -74,18 +97,7 @@ document.ready(function () {
     })
 
    
-
-    // 定义一个对象存储发送到后端的数据
-    let data = {
-        userId:user.userId,
-        nickname: "",
-        gender: "",
-        birthday: "",
-        province: "",
-        city: "",
-        address:[],
-        sign:""
-    };
+     
     // 注册事件
     // 性别
     genderDom.addEventListener("click", function (event) {
@@ -132,9 +144,6 @@ document.ready(function () {
     // 省市
     provinceDom.addEventListener("click", function (event) {
 
-
-
-
         // 拿到后台的数据 
         $http.get("/address/province", function (res) {
             // console.log(res);
@@ -167,16 +176,11 @@ document.ready(function () {
 
     });
 
-    // 封装调用城市列表函数
-    // function getCity(){
-
-    // }
-
     // 选择城市
     cityDom.addEventListener("click", function (event) {
 
         let int = data.province.value;
-        console.log(int);
+        // console.log(int);
 
         // 判断int的值
         if (int == undefined) {
@@ -219,7 +223,9 @@ document.ready(function () {
 
     })
 
-
+     // 获取本地的data
+    let localData=JSON.parse(localStorage.getItem("localData"));
+    console.log(localData);
 
     // 保存信息
     saveDom.addEventListener("click", function (event) {
@@ -237,9 +243,20 @@ document.ready(function () {
         data.address[0]=data.province.label;
         data.address[1]=data.city.label;
         
-        console.log(data);
+       
+        // 判断用户如果没有输入省份的值，就将本地存储的值给省份和城市
+        if(data.province==""){ 
+            let arr=localData.data.address.split(",");
+            data.address[0]=arr[0];
+            data.address[1]=arr[1];
+        }
+         console.log(data);
         // 请求接口发送数据
         $http.post("/users/userEdit",data,function(res){
+
+             // 调用函数更新一下个人信息
+             changeInfor();
+
             // 提示
             utils.hint(0,"信息修改成功");
         })

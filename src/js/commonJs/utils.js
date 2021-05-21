@@ -42,7 +42,9 @@ utils.hint=function(status,msg){
 // 公共页脚
 utils.addFooter=function(page){
     // 创建一个元素节点
-    let footer=document.createElement("footerS");
+    let commonFooter=document.createElement("commonFooter");
+    //给元素节点添加一个属性
+    commonFooter.classList="commonFooter";
     // 向元素节点里边渲染内容
     let html=`
     <ul>
@@ -68,9 +70,9 @@ utils.addFooter=function(page){
         </a>
        </ul>
     `;
-    footer.innerHTML=html;
+    commonFooter.innerHTML=html;
     // 在body的内容之后添加新创建的节点
-    document.querySelector("body").appendChild(footer);
+    document.querySelector("body").appendChild(commonFooter);
 }
 
 // 将时间转换为标准时间格式
@@ -139,5 +141,131 @@ utils.getId=function(str){
     })
    return obj;
 }
+
+// 请求ajax
+utils.ajax={
+
+    get: function () {
+        //如果默认参数的长度为2，证明只传入了两个值
+        if (arguments.length == 2) {
+            let url=arguments[0];
+            let callback = arguments[1];
+            //实例化ajax
+            let xhr = new XMLHttpRequest();
+            // console.log(arguments[0]);
+            //设置请求方式及请求地址
+            xhr.open("get", url);
+
+           
+            //监听xhr是否改变
+            xhr.onreadystatechange = function () {
+                // 判断
+                if (xhr.readyState === 4 && xhr.status === 200) {
+
+                    // 运行函数
+                    console.log(arguments);
+                    callback(JSON.parse(xhr.responseText));
+                }
+            }
+            //发送
+            xhr.send();
+
+
+   
+        } else if (arguments.length == 3) { //如果默认参数的长度为3，证明传入了三个值
+
+            // 第二个数据是一个对象，需要将第二个数据里面的各个属性通过&符号拼接，再使用？拼接到第一个数据后面
+            let obj=arguments[1];
+            let arr= Object.keys(obj);//Object.keys:获取对象中所有的键名 并且返回一个数组
+           
+            let arr1=[];
+           arr.forEach(function(item){
+           arr1.push(item+"="+obj[item]);
+           })
+
+            let str2= arr1.join("&");//join:把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
+          
+            let str1=arguments[0];
+           
+            //使用？拼接两个字符串
+            let url=str1+"?"+str2;
+
+            //实例化ajax
+            let xhr = new XMLHttpRequest();
+           
+            //设置请求方式及请求地址
+            xhr.open("get", url);
+           
+            
+         
+          
+            let callback = arguments[2];
+            //监听xhr是否改变
+            xhr.onreadystatechange = function () {
+                // 判断
+                if (xhr.readyState === 4 && xhr.status === 200) {
+
+                    // 运行函数
+                    callback(JSON.parse(xhr.responseText));
+                }
+            }
+            //发送
+            xhr.send();
+
+
+        }
+
+    },
+
+    post: function (url,data,callback){
+        //转换data对象为字符串
+        let obj=data;
+      
+        let arr= Object.keys(obj);//Object.keys:获取对象中所有的键名 并且返回一个数组
+
+        let arr1=[];
+        arr.forEach(function(item){
+        arr1.push(item+"="+obj[item]);
+        })
+
+         let str= arr1.join("&");//join:把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
+
+        //实例化ajax
+        let xhr=new XMLHttpRequest();
+
+        //设置请求方式和请求地址
+        xhr.open("post",url);
+
+         //转换请求头为form格式
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+        //监听
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState===4 && xhr.status===200){
+                callback(JSON.parse(xhr.responseText));
+            }
+        }
+
+        //发送
+        xhr.send(str);
+
+    },
+
+    common: function (data) {
+
+        let obj=data;
+       //判断：如果type值为post
+        if(obj.type=="post"){
+            // 则调用post方法
+         ajax.post(obj.url,obj.data,obj.success);
+        }else if(obj.type=="get"){
+            ajax.get(obj.url, obj.data,obj.success);
+        }
+       
+    }
+};
+
+
+// 
 // 挂载到window对象上
 window.utils=utils;

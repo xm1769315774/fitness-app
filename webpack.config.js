@@ -21,17 +21,17 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     // 入口
     entry: {
-        commonCss:'./src/js/commonCss.js', //公共css样式/js 一定写在入口的最前面
+        commonCss: './src/js/commonCss.js', //公共css样式/js 一定写在入口的最前面
 
-         // 引入公共js
-        dom:"./src/js/commonJs/dom.js",
-        http:"./src/js/commonJs/http.js",
-        utils:"./src/js/commonJs/utils.js",
+        // 引入公共js
+        dom: "./src/js/commonJs/dom.js",
+        http: "./src/js/commonJs/http.js",
+        utils: "./src/js/commonJs/utils.js",
 
         // 引入三方插件
-        captcha:"./src/lib/captcha-mini.js",
-        Swiper:"./src/lib/swiper/swiper-bundle.js",
-        weui:"./src/lib/weui/weui.js",
+        captcha: "./src/lib/captcha-mini.js",
+        Swiper: "./src/lib/swiper/swiper-bundle.js",
+        weui: "./src/lib/weui/weui.js",
 
         home: "./src/js/home.js",
         login: "./src/js/login.js",
@@ -42,6 +42,7 @@ module.exports = {
         information: "./src/js/information.js",
         courseDes: "./src/js/courseDes.js",
         courseTrain: "./src/js/courseTrain.js",
+        sportsData: "./src/js/sportsData.js",
     },
     //出口
     output: {
@@ -58,9 +59,9 @@ module.exports = {
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                      publicPath: '../'
+                        publicPath: '../'
                     }
-                }, 'css-loader','postcss-loader']    //使用哪些三方包去处理匹配出来的这些文件 
+                }, 'css-loader', 'postcss-loader']    //使用哪些三方包去处理匹配出来的这些文件 
 
             },
             {
@@ -68,9 +69,9 @@ module.exports = {
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
-                      publicPath: '../'
+                        publicPath: '../'
                     }
-                }, 'css-loader','postcss-loader', 'less-loader']       //使用哪些三方包去处理匹配出来的这些文件 
+                }, 'css-loader', 'postcss-loader', 'less-loader']       //使用哪些三方包去处理匹配出来的这些文件 
 
             },
             {
@@ -80,6 +81,13 @@ module.exports = {
                     name: '[hash:16].[ext]',  // 图片输出的名字hash长度16位 默认32位
                     limit: 20 * 1024,  // 限制 小于20kb base64处理
                     outputPath: "img"
+                }
+            },
+            {
+                test:/\.(eot|svg|ttf|woff|woff2)$/, //配置iconfont文件打包
+                loader:'file-loader',
+                options: {
+                    outputPath: 'fonts'
                 }
             },
             {
@@ -100,47 +108,52 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/page/home.html",
             filename: 'home.html',
-            chunks: ['home','commonCss','dom','Swiper',"utils",'http']
+            chunks: ['home', 'commonCss', 'dom', 'Swiper', "utils", 'http']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/login.html",
             filename: 'login.html',
-            chunks: ['login','commonCss','dom','http','utils']
+            chunks: ['login', 'commonCss', 'dom', 'http', 'utils']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/register.html",
             filename: 'register.html',
-            chunks: ['register','commonCss','dom','http','captcha','utils']
+            chunks: ['register', 'commonCss', 'dom', 'http', 'captcha', 'utils']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/adv.html",
             filename: 'adv.html',
-            chunks: ['adv','commonCss','dom']
+            chunks: ['adv', 'commonCss', 'dom']
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/my.html",
             filename: 'my.html',
-            chunks: ['my','commonCss','dom',"utils","http"]
+            chunks: ['my', 'commonCss', 'dom', "utils", "http"]
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/sports.html",
             filename: 'sports.html',
-            chunks: ['sports','commonCss','dom','Swiper',"utils","http"]
+            chunks: ['sports', 'commonCss', 'dom', 'Swiper', "utils", "http"]
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/information.html",
             filename: 'information.html',
-            chunks: ['information','commonCss','dom','http',"utils","weui"]
+            chunks: ['information', 'commonCss', 'dom', 'http', "utils", "weui"]
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/courseDes.html",
             filename: 'courseDes.html',
-            chunks: ['courseDes','commonCss','dom','http',"utils","weui"]
+            chunks: ['courseDes', 'commonCss', 'dom', 'http', "utils", "weui"]
         }),
         new HtmlWebpackPlugin({
             template: "./src/page/courseTrain.html",
             filename: 'courseTrain.html',
-            chunks: ['courseTrain','commonCss','dom','http',"utils","weui"]
+            chunks: ['courseTrain', 'commonCss', 'dom', 'http', "utils", "weui"]
+        }),
+        new HtmlWebpackPlugin({
+            template: "./src/page/sportsData.html",
+            filename: 'sportsData.html',
+            chunks: ['sportsData', 'commonCss', 'dom', 'http', "utils", "weui"]
         }),
 
 
@@ -150,7 +163,7 @@ module.exports = {
         new OptimizeCssAssetsWebpackPlugin(),
         //plugin 添加
         new CleanWebpackPlugin()
-        
+
     ],
 
     //环境
